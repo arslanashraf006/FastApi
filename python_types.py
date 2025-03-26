@@ -1,6 +1,6 @@
 from datetime import datetime
 #Pydantic is a Python library to perform data validation.
-from pydantic import BaseModel
+from pydantics import BaseModel
 
 def full_name(fname : str, lname : str):
     fname = fname.capitalize()
