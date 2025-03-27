@@ -1,0 +1,14 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+h1 {
+    color: blue;
+}
+
+div {
+    background-image: url("/static/cricket.jpg");
+    height: 20vh;
+    width: 20vh;
+}
