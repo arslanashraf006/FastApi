@@ -11,14 +11,24 @@ client = pymongo.MongoClient("mongodb://localhost:27017/")
 database = client["person"]
 collection = database["employee"]
 
+
+#selective query gives one data
+# data = collection.find_one({"name": "saad"})
+# print(data)
+
+#selective query gives all data
+data = collection.find({"name": "Saad"})
+for item in data:
+    print(item)
+
 #read one data
 # data = collection.find_one()
 # print(data)
 
 #read all data
-data = collection.find()
-for item in data:
-    print(item)
+# data = collection.find()
+# for item in data:
+#     print(item)
 #print(list(data))
 
 
