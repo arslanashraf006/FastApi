@@ -11,34 +11,46 @@ client = pymongo.MongoClient("mongodb://localhost:27017/")
 database = client["person"]
 collection = database["employee"]
 
-dictonary = [
-    {
-    "name" : "Saad",
-    "channel": "youtube",
-    "age": "22",
-    "subject": "python"
-    },
-     {
-    "name" : "Saad Nisar",
-    "channel": "youtube",
-    "age": "22",
-    "subject": "python"
-    },
-     {
-    "name" : "Saad BCS",
-    "channel": "youtube",
-    "age": "22",
-    "subject": "python"
-    },
-     {
-    "name" : "Saad Tikki",
-    "channel": "youtube",
-    "age": "22",
-    "subject": "python"
-    }
-]
+#read one data
+# data = collection.find_one()
+# print(data)
 
-collection.insert_many(dictonary)
+#read all data
+data = collection.find()
+for item in data:
+    print(item)
+#print(list(data))
+
+
+#insert data operation
+#dictonary = [
+#     {
+#     "name" : "Saad",
+#     "channel": "youtube",
+#     "age": "22",
+#     "subject": "python"
+#     },
+#      {
+#     "name" : "Saad Nisar",
+#     "channel": "youtube",
+#     "age": "22",
+#     "subject": "python"
+#     },
+#      {
+#     "name" : "Saad BCS",
+#     "channel": "youtube",
+#     "age": "22",
+#     "subject": "python"
+#     },
+#      {
+#     "name" : "Saad Tikki",
+#     "channel": "youtube",
+#     "age": "22",
+#     "subject": "python"
+#     }
+# ]
+
+# collection.insert_many(dictonary)
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
