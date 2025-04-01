@@ -8,8 +8,37 @@ app = FastAPI()
 
 #conecting with mongodb
 client = pymongo.MongoClient("mongodb://localhost:27017/")
-database = client["friends"]
-collection = database["best_friend"]
+database = client["person"]
+collection = database["employee"]
+
+dictonary = [
+    {
+    "name" : "Saad",
+    "channel": "youtube",
+    "age": "22",
+    "subject": "python"
+    },
+     {
+    "name" : "Saad Nisar",
+    "channel": "youtube",
+    "age": "22",
+    "subject": "python"
+    },
+     {
+    "name" : "Saad BCS",
+    "channel": "youtube",
+    "age": "22",
+    "subject": "python"
+    },
+     {
+    "name" : "Saad Tikki",
+    "channel": "youtube",
+    "age": "22",
+    "subject": "python"
+    }
+]
+
+collection.insert_many(dictonary)
 
 app.mount("/static", StaticFiles(directory="static"), name="static")
 
