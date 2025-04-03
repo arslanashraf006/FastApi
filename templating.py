@@ -11,6 +11,10 @@ client = pymongo.MongoClient("mongodb://localhost:27017/")
 database = client["person"]
 collection = database["employee"]
 
+#counting the data
+print(collection.count_documents({}))
+print(collection.count_documents({"name" : "Saad"}))
+
 #ignore the key of data
 data = collection.find({"name": "Saad"}, {"age" : 0, "subject" : 0, "_id": 0})
 for item in data:
