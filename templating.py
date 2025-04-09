@@ -11,6 +11,12 @@ client = pymongo.MongoClient("mongodb://localhost:27017/")
 database = client["person"]
 collection = database["employee"]
 
+#updating the data
+fil = {"name": "Saad"}
+upd = {"age" : 16}
+updt = collection.update_many(fil,{"$set": upd})
+print(updt.modified_count)
+
 #counting the data
 print(collection.count_documents({}))
 print(collection.count_documents({"name" : "Saad"}))
