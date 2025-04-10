@@ -11,6 +11,11 @@ client = pymongo.MongoClient("mongodb://localhost:27017/")
 database = client["person"]
 collection = database["employee"]
 
+#limiting get data from database
+limit = collection.find().limit(2)
+for item in limit:
+    print(item)
+
 #updating the data
 fil = {"name": "Saad"}
 upd = {"age" : 16}
