@@ -11,6 +11,10 @@ client = pymongo.MongoClient("mongodb://localhost:27017/")
 database = client["person"]
 collection = database["employee"]
 
+#delete operation in fast api
+record = {"name": "saad"}
+collection.delete_many(record)
+
 #limiting get data from database
 limit = collection.find().limit(2)
 for item in limit:
