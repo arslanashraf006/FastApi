@@ -11,6 +11,12 @@ client = pymongo.MongoClient("mongodb://localhost:27017/")
 database = client["person"]
 collection = database["employee"]
 
+#$lt (less than), $gt (greater than), $lte (less than and equal to), $gte (greater than and equal to) operators
+dataValue = list(collection.find({"age": {"$gt" : "35"}}))
+
+for item in dataValue:
+    print(item)
+
 #delete operation in fast api
 record = {"name": "saad"}
 collection.delete_many(record)
