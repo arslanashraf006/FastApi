@@ -29,7 +29,7 @@ def read_item(request: Request):
         "subject": subject,
     }
     return templates.TemplateResponse(
-        request=request, name="about.html", context= {"user": user}
+        request=request, name="about.html", context= {"fruits": ["apple", "mango", "guave", "pineapple", "banana", "grapes"]}
     )
 
 
