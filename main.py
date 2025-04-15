@@ -4,6 +4,12 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 import pymongo
 
+# command to run with uvicorn
+# uvicorn main:app --reload
+
+#command to set port
+# uvicorn main:app --port=1000 --reload
+
 app = FastAPI()
 
 client = pymongo.MongoClient("mongodb://localhost:27017/")
