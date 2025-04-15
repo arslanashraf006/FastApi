@@ -5,16 +5,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Page</title>
+
+    <style>
+        table,
+        thead,
+        tbody,
+        th,
+        tr,
+        td {
+            border: 3px solid black;
+            padding: 5px;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>This is our about page.</h1>
+    <h1>This is the data of employee.</h1>
 
-    <h3>{{fruits}}</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>name</th>
+                <th>age</th>
+                <th>channel</th>
+                <th>subject</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in user %}
+            <tr>
+                <td>{{item.name}}</td>
+                <td>{{item.age}}</td>
+                <td>{{item.channel}}</td>
+                <td>{{item.subject}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <!-- <h3>{{fruits}}</h3>
 
     {% for item in fruits %}
     <h5>this is our fruit: {{item}}</h5>
-    {% endfor %}
+    {% endfor %} -->
 </body>
 
 </html>
